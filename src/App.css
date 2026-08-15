@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  background-color: #121212;
-  color: white;
-  font-family: sans-serif;
+  padding: 0;
+  background-color: #0b0b0b;
+  overflow: hidden; /* Sayfanın dışarı taşmasını engeller */
 }
 
 .layout {
@@ -10,11 +10,11 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #0b0b0b;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .ad-space {
-  width: 250px;       /* Reklam alanlarına varsayılan bir genişlik veriyoruz */
+  width: 250px;
   min-width: 250px;
   background-color: #121212;
   height: 100%;
