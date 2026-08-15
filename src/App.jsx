@@ -20,13 +20,13 @@ function App() {
   return (
     <div className="layout">
       {/* Sol Reklam Alanı */}
-      <AdSpace adSlot="1234567890" />
+      <AdSpace adSlot="1131353456" />
 
       {/* Merkezdeki Video Oynatıcı */}
       <VideoPlayer videoUrl={videoUrl} />
 
       {/* Sağ Reklam Alanı */}
-      <AdSpace adSlot="0987654321" />
+      <AdSpace adSlot="6056377071" />
     </div>
   );
 }
