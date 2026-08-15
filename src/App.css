@@ -26,16 +26,22 @@ body {
 }
 
 .video-container {
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  padding: 20px;
+  background-color: #0b0b0b;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .video-player {
-  width: 100%;       /* Bulunduğu kutunun genişliğini sonuna kadar doldurur */
-  height: auto;      /* Oranını bozmadan yüksekliği otomatik ayarlar */
-  max-height: 85vh;  /* Ekrandan taşmasını engeller */
+  width: 100%;
+  max-width: 1000px;  /* Çok fazla devasa olmasını engeller, ortada şık durur */
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   background-color: black;
