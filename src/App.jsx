@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import AdSpace from './AdSpace';
 import VideoPlayer from './VideoPlayer';
 import './App.css';
@@ -27,6 +28,8 @@ function App() {
 
       {/* Sağ Reklam Alanı */}
       <AdSpace adSlot="6056377071" />
+      
+      <Analytics />
     </div>
   );
 }
