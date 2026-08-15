@@ -33,11 +33,12 @@ body {
 }
 
 .video-player {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
+  width: 100%;       /* Bulunduğu kutunun genişliğini sonuna kadar doldurur */
+  height: auto;      /* Oranını bozmadan yüksekliği otomatik ayarlar */
+  max-height: 85vh;  /* Ekrandan taşmasını engeller */
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background-color: black;
 }
 
 .error-message {
