@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  color: white;
+  font-family: sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  height: 100vh;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ad-space {
+  background-color: #1e1e1e;
+  border: 2px dashed #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #666;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.error-message {
+  text-align: center;
+  color: #aaa;
+}
