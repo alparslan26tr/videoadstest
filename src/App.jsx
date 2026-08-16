@@ -18,7 +18,7 @@ function App() {
     <div className="layout">
       {/* Üst Bilgi (Header) */}
       <header className="site-header">
-        <h1>Bunkr Video Player</h1>
+        <h1>Videobka Video Player</h1>
         <p>Hızlı, Kesintisiz ve Güvenli Bulut Tabanlı Video Deneyimi</p>
       </header>
 
