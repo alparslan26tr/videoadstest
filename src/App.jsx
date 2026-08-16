@@ -24,7 +24,7 @@ function App() {
 
       <main className="main-content">
         {/* Sol Reklam Alanı */}
-        <AdSpace adSlot="1234567890" />
+        <AdSpace adSlot="1131353456" />
 
         {/* Orta Sütun (Video ve SEO Metinleri) */}
         <div className="center-column">
@@ -65,7 +65,7 @@ function App() {
         </div>
 
         {/* Sağ Reklam Alanı */}
-        <AdSpace adSlot="0987654321" />
+        <AdSpace adSlot="6056377071" />
       </main>
 
       {/* Alt Bilgi (Footer) - Yasal Sayfalar */}
