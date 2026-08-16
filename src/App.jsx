@@ -41,15 +41,26 @@ function App() {
           )}
 
           {/* AdSense Botları İçin SEO ve İçerik Metni */}
+         {/* AdSense Botları İçin SEO ve İçerik Metni */}
           <section className="seo-content">
             <h2>Gelişmiş Video Altyapısı Hakkında</h2>
             <p>
               Yüksek performanslı ve kesintisiz medya tüketimi sağlamak amacıyla modern web teknolojileri ile geliştirilmiş bir video oynatma platformuyuz. Gelişmiş bulut bilişim mimarimiz sayesinde, kullanıcılarımıza her cihazda optimize edilmiş, düşük gecikmeli bir izleme deneyimi sunuyoruz. 
             </p>
-            <h3>Özellikler ve Kullanım</h3>
+            
+            <h3>Özellikler ve Güvenlik</h3>
             <p>
               Sistemimiz, dış kaynaklardan sağlanan video bağlantılarını güvenli bir şekilde işleyerek tarayıcı üzerinden doğrudan oynatım sağlar. Güçlü altyapımız, anlık veri akışını kesintisiz bir şekilde sunarken, duyarlı tasarımı sayesinde mobil ve masaüstü platformlarda cihazınıza tam uyum gösterir. Kullanıcı gizliliği ve veri güvenliği en temel önceliğimizdir.
             </p>
+
+            <h3>Sistem Nasıl Kullanılır?</h3>
+            <p>Platformumuz üzerinden video oynatmak oldukça basit ve eklentisiz bir işlemdir. Lütfen aşağıdaki adımları takip edin:</p>
+            <ol style={{ color: '#aaa', lineHeight: '1.8', fontSize: '15px' }}>
+              <li>Oynatmak istediğiniz uyumlu kaynak video bağlantısını (URL) kopyalayın.</li>
+              <li>Tarayıcınızın adres çubuğundaki site adresimizin (videobka.vercel.app) sonuna <strong>?v=</strong> parametresini ekleyin.</li>
+              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın. <br/><em>(Örnek kullanım: videobka.vercel.app/?v=https://ornekvideo.com/video.mp4)</em></li>
+              <li>Enter tuşuna basıp sayfayı yüklediğinizde, videonuz gelişmiş oynatıcımızda otomatik olarak hazır hale gelecektir.</li>
+            </ol>
           </section>
         </div>
 
