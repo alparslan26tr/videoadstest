@@ -5,30 +5,53 @@ import './App.css';
 
 function App() {
   const [videoUrl, setVideoUrl] = useState(null);
+  const [watchHistory, setWatchHistory] = useState([]);
 
   useEffect(() => {
+    // Sayfa açıldığında eski geçmişi tarayıcı hafızasından (localStorage) çekiyoruz
+    const savedHistory = JSON.parse(localStorage.getItem('bunkrHistory')) || [];
+    setWatchHistory(savedHistory);
+
     const currentUrl = window.location.href;
     if (currentUrl.includes('?v=')) {
       const extractedUrl = currentUrl.split('?v=')[1];
       setVideoUrl(extractedUrl);
+
+      // Yeni açılan videoyu geçmişe kaydet
+      addToHistory(extractedUrl, savedHistory);
     }
   }, []);
 
+  const addToHistory = (url, currentHistory) => {
+    // Eğer bu link zaten geçmişte varsa önce onu listeden çıkarıyoruz (üste almak için)
+    let newHistory = currentHistory.filter(item => item !== url);
+    // Yeni linki listenin en başına ekliyoruz
+    newHistory.unshift(url);
+    // Sadece en son izlenen 4 videoyu tutuyoruz (liste uzayıp gitmesin diye)
+    newHistory = newHistory.slice(0, 4);
+    
+    setWatchHistory(newHistory);
+    // Güncel listeyi tarayıcı hafızasına yazıyoruz
+    localStorage.setItem('bunkrHistory', JSON.stringify(newHistory));
+  };
+
+  // Geçmişteki butona tıklanınca o videoya yönlendir
+  const handleHistoryClick = (url) => {
+    window.location.href = `/?v=${url}`;
+  };
+
   return (
     <div className="layout">
-      {/* Üst Bilgi (Header) */}
       <header className="site-header">
         <h1>Videobka Video Player</h1>
         <p>Hızlı, Kesintisiz ve Güvenli Bulut Tabanlı Video Deneyimi</p>
       </header>
 
       <main className="main-content">
-        {/* Sol Reklam Alanı */}
-        <AdSpace adSlot="1234567890" />
+        {/* Sol Reklam */}
+        <AdSpace adSlot="1131353456" />
 
-        {/* Orta Sütun (Video ve SEO Metinleri) */}
         <div className="center-column">
-          
           {videoUrl ? (
             <div className="video-wrapper">
               <VideoPlayer videoUrl={videoUrl} />
@@ -40,8 +63,25 @@ function App() {
             </div>
           )}
 
-          {/* AdSense Botları İçin SEO ve İçerik Metni */}
-         {/* AdSense Botları İçin SEO ve İçerik Metni */}
+          {/* İZLEME GEÇMİŞİ BÖLÜMÜ */}
+          {watchHistory.length > 0 && (
+            <div className="history-section">
+              <h3>🕒 Son İzlenenler</h3>
+              <div className="history-buttons">
+                {watchHistory.map((url, index) => (
+                  <button 
+                    key={index} 
+                    onClick={() => handleHistoryClick(url)} 
+                    className="history-btn"
+                    title={url} /* Üzerine gelince linkin tamamını gösterir */
+                  >
+                    ▶ Video {index + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <section className="seo-content">
             <h2>Gelişmiş Video Altyapısı Hakkında</h2>
             <p>
@@ -58,17 +98,16 @@ function App() {
             <ol style={{ color: '#aaa', lineHeight: '1.8', fontSize: '15px' }}>
               <li>Oynatmak istediğiniz uyumlu kaynak video bağlantısını (URL) kopyalayın.</li>
               <li>Tarayıcınızın adres çubuğundaki site adresimizin (videobka.vercel.app) sonuna <strong>?v=</strong> parametresini ekleyin.</li>
-              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın. <br/><em>(Örnek kullanım: videobka.vercel.app/?v=https://ornekvideo.com/video.mp4)</em></li>
+              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın.</li>
               <li>Enter tuşuna basıp sayfayı yüklediğinizde, videonuz gelişmiş oynatıcımızda otomatik olarak hazır hale gelecektir.</li>
             </ol>
           </section>
         </div>
 
-        {/* Sağ Reklam Alanı */}
-        <AdSpace adSlot="0987654321" />
+        {/* Sağ Reklam */}
+        <AdSpace adSlot="6056377071" />
       </main>
 
-      {/* Alt Bilgi (Footer) - Yasal Sayfalar */}
       <footer className="site-footer">
         <div className="footer-links">
           <a href="#">Hakkımızda</a>
