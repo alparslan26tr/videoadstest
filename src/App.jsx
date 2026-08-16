@@ -5,13 +5,9 @@ import './App.css';
 
 function App() {
   const [videoUrl, setVideoUrl] = useState(null);
-  // Akordiyon için hangi sekmenin açık olduğunu tutan state (1. sekme varsayılan açık)
+  
+  // Akordiyon için state
   const [activeAccordion, setActiveAccordion] = useState(1);
-
-  const toggleAccordion = (index) => {
-    // Tıklanan sekme zaten açıksa kapat, değilse aç
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -21,21 +17,23 @@ function App() {
     }
   }, []);
 
+  // Akordiyon açma/kapama fonksiyonu
+  const toggleAccordion = (index) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
   return (
     <div className="layout">
-      {/* Üst Bilgi (Header) */}
       <header className="site-header">
-        <h1>Videobka Video Player</h1>
+        <h1>Bunkr Video Player</h1>
         <p>Hızlı, Kesintisiz ve Güvenli Bulut Tabanlı Video Deneyimi</p>
       </header>
 
       <main className="main-content">
-        {/* Sol Reklam Alanı */}
-        <AdSpace adSlot="1131353456" />
+        {/* Sol Reklam Alanı (Gerçek AdSense Kodun) */}
+        <AdSpace adSlot="6056377071" />
 
-        {/* Orta Sütun (Video ve SEO Metinleri) */}
         <div className="center-column">
-          
           {videoUrl ? (
             <div className="video-wrapper">
               <VideoPlayer videoUrl={videoUrl} />
@@ -47,11 +45,9 @@ function App() {
             </div>
           )}
 
-          
-        {/* AdSense Botları İçin SEO ve İçerik Metni (AKORDİYON) */}
+          {/* AKORDİYON SEO METİNLERİ */}
           <section className="seo-content accordion-section">
             
-            {/* 1. Akordiyon Sekmesi */}
             <div className="accordion-item">
               <button 
                 className={`accordion-header ${activeAccordion === 1 ? 'active' : ''}`} 
@@ -67,7 +63,6 @@ function App() {
               </div>
             </div>
 
-            {/* 2. Akordiyon Sekmesi */}
             <div className="accordion-item">
               <button 
                 className={`accordion-header ${activeAccordion === 2 ? 'active' : ''}`} 
@@ -83,7 +78,6 @@ function App() {
               </div>
             </div>
 
-            {/* 3. Akordiyon Sekmesi */}
             <div className="accordion-item">
               <button 
                 className={`accordion-header ${activeAccordion === 3 ? 'active' : ''}`} 
@@ -104,12 +98,12 @@ function App() {
             </div>
 
           </section>
+        </div>
 
-        {/* Sağ Reklam Alanı */}
-        <AdSpace adSlot="6056377071" />
+        {/* Sağ Reklam Alanı (Gerçek AdSense Kodun) */}
+        <AdSpace adSlot="1131353456" />
       </main>
 
-      {/* Alt Bilgi (Footer) - Yasal Sayfalar */}
       <footer className="site-footer">
         <div className="footer-links">
           <a href="#">Hakkımızda</a>
