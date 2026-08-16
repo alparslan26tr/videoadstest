@@ -147,3 +147,91 @@ body {
   color: #444;
   font-size: 13px;
 }
+
+/* Akordiyon Genel Kapsayıcı */
+.accordion-section {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* Her Bir Akordiyon Kutusu */
+.accordion-item {
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Tıklanabilir Başlık (Buton) */
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 20px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.accordion-header:hover {
+  background-color: #222;
+}
+
+/* Başlık aktif (açık) olduğunda alt çizgi ekle */
+.accordion-header.active {
+  border-bottom: 1px solid #2a2a2a;
+  color: #fff;
+}
+
+/* + ve - İkonları */
+.accordion-icon {
+  font-size: 22px;
+  font-weight: normal;
+  color: #888;
+  transition: transform 0.3s ease;
+}
+
+/* Açılan Metin İçeriği */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background-color: #111;
+  padding: 0 25px;
+}
+
+/* Kutu açıkken devreye giren sınıf */
+.accordion-content.open {
+  max-height: 500px; /* İçeriğin sığabileceği kadar geniş bir alan */
+  padding: 20px 25px;
+}
+
+/* Akordiyon İçindeki Metinler */
+.accordion-content p {
+  color: #aaa;
+  margin: 0 0 15px 0;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.accordion-content ol {
+  color: #aaa;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.accordion-content ol li {
+  margin-bottom: 8px;
+}
