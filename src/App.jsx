@@ -5,6 +5,13 @@ import './App.css';
 
 function App() {
   const [videoUrl, setVideoUrl] = useState(null);
+  // Akordiyon için hangi sekmenin açık olduğunu tutan state (1. sekme varsayılan açık)
+  const [activeAccordion, setActiveAccordion] = useState(1);
+
+  const toggleAccordion = (index) => {
+    // Tıklanan sekme zaten açıksa kapat, değilse aç
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -41,28 +48,62 @@ function App() {
           )}
 
           
-         {/* AdSense Botları İçin SEO ve İçerik Metni */}
-          <section className="seo-content">
-            <h2>Neden Bizim Altyapımızı Tercih Etmelisiniz?</h2>
-            <p>
-              Sıradan video oynatıcıların donma, yavaş yüklenme ve karmaşık eklenti sorunlarından sıkıldınız mı? Biz, modern web teknolojilerini ve gelişmiş bulut bilişim mimarisini kullanarak size tamamen kesintisiz, reklamsız (video içi) ve anında tepki veren bir izleme deneyimi sunuyoruz. Cihazınız ne olursa olsun, videolarınızı sıfır kalite kaybı ve en düşük gecikme süresiyle izlemenin keyfini çıkarın. Çünkü zamanınızın ve seyir zevkinizin ne kadar değerli olduğunu çok iyi biliyoruz.
-            </p>
+        {/* AdSense Botları İçin SEO ve İçerik Metni (AKORDİYON) */}
+          <section className="seo-content accordion-section">
             
-            <h3>Üst Düzey Güvenlik ve Kusursuz Akış</h3>
-            <p>
-              İnternetteki izlediğiniz içerikler sadece sizi ilgilendirir. Sistemimiz, dış kaynaklardan gelen video bağlantılarını cihazınıza hiçbir şey indirmeden, tamamen güvenli bir tünel üzerinden işler. Arka planda çalışan güçlü altyapımız anlık veri akışını sürekli optimize ederken, akıllı ekran tasarımımız (responsive) sayesinde ister telefonda ister bilgisayarda olun kusursuz bir görünüme sahip olursunuz. Kullanıcı gizliliği bizim için sadece bir seçenek değil, en temel standarttır. Linki yapıştırın, arkanıza yaslanın ve pürüzsüz izleme deneyiminin tadını çıkarın!
-            </p>
+            {/* 1. Akordiyon Sekmesi */}
+            <div className="accordion-item">
+              <button 
+                className={`accordion-header ${activeAccordion === 1 ? 'active' : ''}`} 
+                onClick={() => toggleAccordion(1)}
+              >
+                Neden Bizim Altyapımızı Tercih Etmelisiniz?
+                <span className="accordion-icon">{activeAccordion === 1 ? '−' : '+'}</span>
+              </button>
+              <div className={`accordion-content ${activeAccordion === 1 ? 'open' : ''}`}>
+                <p>
+                  Sıradan video oynatıcıların donma, yavaş yüklenme ve karmaşık eklenti sorunlarından sıkıldınız mı? Biz, modern web teknolojilerini ve gelişmiş bulut bilişim mimarisini kullanarak size tamamen kesintisiz, reklamsız (video içi) ve anında tepki veren bir izleme deneyimi sunuyoruz. Cihazınız ne olursa olsun, videolarınızı sıfır kalite kaybı ve en düşük gecikme süresiyle izlemenin keyfini çıkarın. Çünkü zamanınızın ve seyir zevkinizin ne kadar değerli olduğunu çok iyi biliyoruz.
+                </p>
+              </div>
+            </div>
 
-            <h3>Sistem Nasıl Kullanılır?</h3>
-            <p>Platformumuz üzerinden video oynatmak oldukça basit ve eklentisiz bir işlemdir. Lütfen aşağıdaki adımları takip edin:</p>
-            <ol style={{ color: '#aaa', lineHeight: '1.8', fontSize: '15px' }}>
-              <li>Oynatmak istediğiniz uyumlu kaynak video bağlantısını (URL) kopyalayın.</li>
-              <li>Tarayıcınızın adres çubuğundaki site adresimizin (videobka.vercel.app) sonuna <strong>?v=</strong> parametresini ekleyin.</li>
-              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın.</li>
-              <li>Enter tuşuna basıp sayfayı yüklediğinizde, videonuz gelişmiş oynatıcımızda otomatik olarak hazır hale gelecektir.</li>
-            </ol>
+            {/* 2. Akordiyon Sekmesi */}
+            <div className="accordion-item">
+              <button 
+                className={`accordion-header ${activeAccordion === 2 ? 'active' : ''}`} 
+                onClick={() => toggleAccordion(2)}
+              >
+                Üst Düzey Güvenlik ve Kusursuz Akış
+                <span className="accordion-icon">{activeAccordion === 2 ? '−' : '+'}</span>
+              </button>
+              <div className={`accordion-content ${activeAccordion === 2 ? 'open' : ''}`}>
+                <p>
+                  İnternetteki izlediğiniz içerikler sadece sizi ilgilendirir. Sistemimiz, dış kaynaklardan gelen video bağlantılarını cihazınıza hiçbir şey indirmeden, tamamen güvenli bir tünel üzerinden işler. Arka planda çalışan güçlü altyapımız anlık veri akışını sürekli optimize ederken, akıllı ekran tasarımımız (responsive) sayesinde ister telefonda ister bilgisayarda olun kusursuz bir görünüme sahip olursunuz. Kullanıcı gizliliği bizim için sadece bir seçenek değil, en temel standarttır. Linki yapıştırın, arkanıza yaslanın ve pürüzsüz izleme deneyiminin tadını çıkarın!
+                </p>
+              </div>
+            </div>
+
+            {/* 3. Akordiyon Sekmesi */}
+            <div className="accordion-item">
+              <button 
+                className={`accordion-header ${activeAccordion === 3 ? 'active' : ''}`} 
+                onClick={() => toggleAccordion(3)}
+              >
+                Sistem Nasıl Kullanılır?
+                <span className="accordion-icon">{activeAccordion === 3 ? '−' : '+'}</span>
+              </button>
+              <div className={`accordion-content ${activeAccordion === 3 ? 'open' : ''}`}>
+                <p>Platformumuz üzerinden video oynatmak oldukça basit ve eklentisiz bir işlemdir. Lütfen aşağıdaki adımları takip edin:</p>
+                <ol>
+                  <li>Oynatmak istediğiniz uyumlu kaynak video bağlantısını (URL) kopyalayın.</li>
+                  <li>Tarayıcınızın adres çubuğundaki site adresimizin (videobka.vercel.app) sonuna <strong>?v=</strong> parametresini ekleyin.</li>
+                  <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın.</li>
+                  <li>Enter tuşuna basıp sayfayı yüklediğinizde, videonuz gelişmiş oynatıcımızda otomatik olarak hazır hale gelecektir.</li>
+                </ol>
+              </div>
+            </div>
+
           </section>
-        </div>
 
         {/* Sağ Reklam Alanı */}
         <AdSpace adSlot="6056377071" />
