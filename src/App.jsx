@@ -40,17 +40,17 @@ function App() {
             </div>
           )}
 
-          {/* AdSense Botları İçin SEO ve İçerik Metni */}
+          
          {/* AdSense Botları İçin SEO ve İçerik Metni */}
           <section className="seo-content">
-            <h2>Gelişmiş Video Altyapısı Hakkında</h2>
+            <h2>Neden Bizim Altyapımızı Tercih Etmelisiniz?</h2>
             <p>
-              Yüksek performanslı ve kesintisiz medya tüketimi sağlamak amacıyla modern web teknolojileri ile geliştirilmiş bir video oynatma platformuyuz. Gelişmiş bulut bilişim mimarimiz sayesinde, kullanıcılarımıza her cihazda optimize edilmiş, düşük gecikmeli bir izleme deneyimi sunuyoruz. 
+              Sıradan video oynatıcıların donma, yavaş yüklenme ve karmaşık eklenti sorunlarından sıkıldınız mı? Biz, modern web teknolojilerini ve gelişmiş bulut bilişim mimarisini kullanarak size tamamen kesintisiz, reklamsız (video içi) ve anında tepki veren bir izleme deneyimi sunuyoruz. Cihazınız ne olursa olsun, videolarınızı sıfır kalite kaybı ve en düşük gecikme süresiyle izlemenin keyfini çıkarın. Çünkü zamanınızın ve seyir zevkinizin ne kadar değerli olduğunu çok iyi biliyoruz.
             </p>
             
-            <h3>Özellikler ve Güvenlik</h3>
+            <h3>Üst Düzey Güvenlik ve Kusursuz Akış</h3>
             <p>
-              Sistemimiz, dış kaynaklardan sağlanan video bağlantılarını güvenli bir şekilde işleyerek tarayıcı üzerinden doğrudan oynatım sağlar. Güçlü altyapımız, anlık veri akışını kesintisiz bir şekilde sunarken, duyarlı tasarımı sayesinde mobil ve masaüstü platformlarda cihazınıza tam uyum gösterir. Kullanıcı gizliliği ve veri güvenliği en temel önceliğimizdir.
+              İnternetteki izlediğiniz içerikler sadece sizi ilgilendirir. Sistemimiz, dış kaynaklardan gelen video bağlantılarını cihazınıza hiçbir şey indirmeden, tamamen güvenli bir tünel üzerinden işler. Arka planda çalışan güçlü altyapımız anlık veri akışını sürekli optimize ederken, akıllı ekran tasarımımız (responsive) sayesinde ister telefonda ister bilgisayarda olun kusursuz bir görünüme sahip olursunuz. Kullanıcı gizliliği bizim için sadece bir seçenek değil, en temel standarttır. Linki yapıştırın, arkanıza yaslanın ve pürüzsüz izleme deneyiminin tadını çıkarın!
             </p>
 
             <h3>Sistem Nasıl Kullanılır?</h3>
@@ -58,7 +58,7 @@ function App() {
             <ol style={{ color: '#aaa', lineHeight: '1.8', fontSize: '15px' }}>
               <li>Oynatmak istediğiniz uyumlu kaynak video bağlantısını (URL) kopyalayın.</li>
               <li>Tarayıcınızın adres çubuğundaki site adresimizin (videobka.vercel.app) sonuna <strong>?v=</strong> parametresini ekleyin.</li>
-              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın. <br/><em>(Örnek kullanım: videobka.vercel.app/?v=https://ornekvideo.com/video.mp4)</em></li>
+              <li>Kopyaladığınız video bağlantısını boşluk bırakmadan bu parametrenin hemen ardına yapıştırın.</li>
               <li>Enter tuşuna basıp sayfayı yüklediğinizde, videonuz gelişmiş oynatıcımızda otomatik olarak hazır hale gelecektir.</li>
             </ol>
           </section>
